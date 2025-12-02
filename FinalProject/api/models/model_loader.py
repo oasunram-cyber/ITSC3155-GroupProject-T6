@@ -1,0 +1,28 @@
+from . import (
+    orders,
+    order_details,
+    recipes,
+    sandwiches,
+    resources,
+    payments,
+    promotions,
+    reviews,
+    schedules,
+    accounts,
+)
+
+from ..dependencies.database import engine
+
+
+def index():
+    # create tables for all models
+    orders.Base.metadata.create_all(engine)
+    order_details.Base.metadata.create_all(engine)
+    recipes.Base.metadata.create_all(engine)
+    sandwiches.Base.metadata.create_all(engine)
+    resources.Base.metadata.create_all(engine)
+    payments.Base.metadata.create_all(engine)
+    promotions.Base.metadata.create_all(engine)
+    reviews.Base.metadata.create_all(engine)
+    schedules.Base.metadata.create_all(engine)
+    accounts.Base.metadata.create_all(engine)
