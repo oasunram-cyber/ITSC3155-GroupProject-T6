@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
-from ..models import reviews as model
-from ..schemas import reviews as schema
+from models import reviews as model
+from schemas import reviews as schema
 from sqlalchemy.exc import SQLAlchemyError
 
 def create(db: Session, request: schema.ReviewCreate):

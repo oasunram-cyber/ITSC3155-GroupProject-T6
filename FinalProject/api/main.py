@@ -1,11 +1,13 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routers import index as index_router
-from api.models import model_loader
+from routers import index as index_router
+from models import model_loader
 
 app = FastAPI()
-
+@app.get("/")
+def api_root():
+    return {"message": "API is running"}
 # Initialize Database Tables
 model_loader.index()
 

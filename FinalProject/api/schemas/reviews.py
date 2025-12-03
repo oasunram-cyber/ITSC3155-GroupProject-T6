@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Optional
 from pydantic import BaseModel
 from . import orders
-from .accounts import accounts
+from . import accounts
 
 class ReviewBase(BaseModel):
     id: str

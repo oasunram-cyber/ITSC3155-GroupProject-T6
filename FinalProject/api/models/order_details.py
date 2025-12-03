@@ -1,6 +1,6 @@
 from sqlalchemy import Column, ForeignKey, Integer, Numeric
 from sqlalchemy.orm import relationship
-from ..dependencies.database import Base
+from dependencies.database import Base
 
 
 class OrderDetail(Base):

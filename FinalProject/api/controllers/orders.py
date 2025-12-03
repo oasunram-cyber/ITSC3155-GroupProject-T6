@@ -1,13 +1,12 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status, Response
 from sqlalchemy.exc import SQLAlchemyError
-from ..schemas import orders as schema 
 from sqlalchemy import func
 from datetime import datetime
 
 
-from ..models import orders as model
-from ..schemas import orders as schema
+from models import orders as model
+from schemas import orders as schema
 
 
 def create(db: Session, request: schema.OrderCreate):

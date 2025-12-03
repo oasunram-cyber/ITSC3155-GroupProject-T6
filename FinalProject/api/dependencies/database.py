@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 from .config import conf
 from urllib.parse import quote_plus
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:Dony.carl1@localhost:3306/t6_finalproject"
+SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:Ptw801351615()@localhost:3306/sandwich_maker_api"
 engine = create_engine(
     SQLALCHEMY_DATABASE_URL
 )

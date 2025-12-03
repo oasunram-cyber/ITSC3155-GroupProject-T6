@@ -1,10 +1,10 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
-from ..dependencies.database import Base
+from dependencies.database import Base
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from ..dependencies.database import Base
+from dependencies.database import Base
 
 
 
@@ -12,7 +12,7 @@ class Reviews(Base):
     __tablename__ = "reviews"
 
     id = Column(Integer, primary_key=True, index=True)
-    order_date = Column(ForeignKey("orders.order_date"))
+
     review = Column(String(300))
     rating = Column(String(10))
 

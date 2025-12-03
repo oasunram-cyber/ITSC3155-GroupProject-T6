@@ -11,7 +11,7 @@ from . import (
     accounts,
 )
 
-from ..dependencies.database import engine
+from dependencies.database import engine
 
 
 def index():

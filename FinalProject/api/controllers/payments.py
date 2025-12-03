@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
-from ..models import payments as model
-from ..models import orders as order_model  # Import Order model
-from ..schemas import payments as schema
+from models import payments as model
+from models import orders as order_model  # Import Order model
+from schemas import payments as schema
 from sqlalchemy.exc import SQLAlchemyError
 
 def create(db: Session, request: schema.PaymentCreate):

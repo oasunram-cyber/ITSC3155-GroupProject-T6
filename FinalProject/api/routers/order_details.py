@@ -2,9 +2,9 @@ from typing import List
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from ..dependencies.database import get_db
-from ..controllers import order_details as controller
-from ..schemas import order_details as schema
+from dependencies.database import get_db
+from controllers import order_details as controller
+from schemas import order_details as schema
 
 router = APIRouter(
     prefix="/order-details",

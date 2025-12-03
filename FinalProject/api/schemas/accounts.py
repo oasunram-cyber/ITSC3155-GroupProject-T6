@@ -18,8 +18,9 @@ class AccountUpdate(BaseModel):
     phone_number: Optional[str] = None
     address: Optional[str] = None
 
-class AccountResponse(CustomerBase):
+class AccountResponse(AccountBase):
     id: int
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }

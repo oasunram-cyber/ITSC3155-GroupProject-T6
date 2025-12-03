@@ -1,9 +1,9 @@
 <<<<<<< HEAD
 from fastapi.testclient import TestClient
-from ..controllers import orders as controller
-from ..main import app
+from controllers import orders as controller
+from main import app
 import pytest
-from ..models import orders as model
+from models import orders as model
 
 client = TestClient(app)
 
@@ -31,9 +31,9 @@ from fastapi.testclient import TestClient
 from unittest.mock import MagicMock
 import pytest
 
-from ..main import app
-from ..controllers import orders as controller
-from ..schemas import orders as schema
+from main import app
+from controllers import orders as controller
+from schemas import orders as schema
 
 # Create a test client for the app (you can use this later for endpoint tests)
 client = TestClient(app)

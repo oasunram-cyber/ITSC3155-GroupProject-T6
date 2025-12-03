@@ -4,10 +4,10 @@ from datetime import date
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from ..dependencies.database import get_db
-from ..controllers import orders as controller
-from ..schemas import orders as schema
-from ..dependencies.database import engine, get_db
+
+from controllers import orders as controller
+from schemas import orders as schema
+from dependencies.database import engine, get_db
 from typing import Optional
 
 router = APIRouter(

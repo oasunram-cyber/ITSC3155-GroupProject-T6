@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
-from ..models import promotions as model
-from ..schemas import promotions as schema
+from models import promotions as model
+from schemas import promotions as schema
 from sqlalchemy.exc import SQLAlchemyError
 
 def create(db: Session, request: schema.PromotionCreate):

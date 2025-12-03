@@ -1,7 +1,7 @@
 from sqlalchemy import Column, ForeignKey, Integer, String, DECIMAL, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
-from ..dependencies.database import Base
+from dependencies.database import Base
 
 
 class Promotion(Base):
@@ -10,7 +10,7 @@ class Promotion(Base):
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     code = Column(Integer, unique=True, nullable=False)
     percent = Column(DECIMAL(4, 2), nullable=False, server_default="0.0")
-    expiration = Column(DATETIME)
+    expiration = Column(DateTime)
     sandwich = Column(String(100), ForeignKey("sandwiches.sandwich_name"))
     promotion = Column(String(100), unique=True)
 

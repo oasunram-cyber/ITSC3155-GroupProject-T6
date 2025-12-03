@@ -2,13 +2,13 @@ from sqlalchemy.orm import Session
 from fastapi import HTTPException, status, Response
 from sqlalchemy.exc import SQLAlchemyError
 
-from ..models import order_details as model
-from ..models import orders as orders_model
-from ..models import sandwiches as sandwiches_model
-from ..models import recipes as recipes_model
-from ..models import resources as resources_model
+from models import order_details as model
+from models import orders as orders_model
+from models import sandwiches as sandwiches_model
+from models import recipes as recipes_model
+from models import resources as resources_model
 
-from ..schemas import order_details as schema
+from schemas import order_details as schema
 
 
 def _recalculate_order_total(db: Session, order_id: int) -> None:
