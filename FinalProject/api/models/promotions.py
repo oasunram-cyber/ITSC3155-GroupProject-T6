@@ -8,7 +8,6 @@ class Promotion(Base):
     __tablename__ = "promotions"
 
     id = Column(Integer, primary_key=True, index=True, autoincrement=True)
-<<<<<<< HEAD
     code = Column(Integer, unique=True, nullable=False)
     percent = Column(DECIMAL(4, 2), nullable=False, server_default="0.0")
     expiration = Column(DATETIME)
@@ -16,7 +15,7 @@ class Promotion(Base):
     promotion = Column(String(100), unique=True)
 
     sandwiches = relationship("Sandwich", back_populates="promotions")
-=======
+
     # promo code customers will type in (e.g., "WELCOME10")
     code = Column(String(50), unique=True, nullable=False)
 
@@ -43,4 +42,3 @@ class Promotion(Base):
         back_populates="promotions",
         primaryjoin="Promotion.sandwich == Sandwich.sandwich_name",
     )
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
