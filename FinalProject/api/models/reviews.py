@@ -1,26 +1,23 @@
-<<<<<<< HEAD
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from ..dependencies.database import Base
-=======
 from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from ..dependencies.database import Base
 
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
+
 
 class Reviews(Base):
     __tablename__ = "reviews"
 
     id = Column(Integer, primary_key=True, index=True)
-<<<<<<< HEAD
     order_date = Column(ForeignKey("orders.order_date"))
     review = Column(String(300))
     rating = Column(String(10))
 
     orders = relationship("Order", back_populates="reviews")
-=======
+
 
     # Link each review to an order
     order_id = Column(Integer, ForeignKey("orders.id"), nullable=False)
@@ -35,4 +32,3 @@ class Reviews(Base):
 
     # Relationship back to the Order model
     order = relationship("Order", back_populates="reviews")
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
