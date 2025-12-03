@@ -7,11 +7,8 @@ from sqlalchemy.orm import Session
 from ..dependencies.database import get_db
 from ..controllers import orders as controller
 from ..schemas import orders as schema
-<<<<<<< HEAD
 from ..dependencies.database import engine, get_db
 from typing import Optional
-#=======
-#>>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
 
 router = APIRouter(
     prefix="/orders",
@@ -50,7 +47,6 @@ def update_order(
     return controller.update(db, order_id, request)
 
 
-<<<<<<< HEAD
 @router.delete("/{item_id}")
 def delete(item_id: int, db: Session = Depends(get_db)):
     return controller.delete(db=db, item_id=item_id)
@@ -62,7 +58,6 @@ def read_all(
     db: Session = Depends(get_db)
 ):
     return controller.read_all(db, start_date=start_date, end_date=end_date)
-=======
 @router.delete("/{order_id}")
 def delete_order(order_id: int, db: Session = Depends(get_db)):
     return controller.delete(db, order_id)
@@ -85,5 +80,5 @@ def get_orders_by_date_range(
 @router.get("/revenue/{target_date}", response_model=schema.DailyRevenueResponse)
 def get_daily_revenue(target_date: date, db: Session = Depends(get_db)):
     return controller.daily_revenue(db, target_date)
-#>>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
+
 
