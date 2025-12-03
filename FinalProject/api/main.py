@@ -5,9 +5,7 @@ from routers import index as index_router
 from models import model_loader
 
 app = FastAPI()
-@app.get("/")
-def api_root():
-    return {"message": "API is running"}
+
 # Initialize Database Tables
 model_loader.index()
 
@@ -15,10 +13,9 @@ model_loader.index()
 index_router.load_routes(app)
 
 # Add CORS so your frontend/browser can talk to the API
-origins = ["*"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
