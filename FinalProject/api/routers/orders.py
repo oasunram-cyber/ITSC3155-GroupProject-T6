@@ -10,8 +10,8 @@ from ..schemas import orders as schema
 <<<<<<< HEAD
 from ..dependencies.database import engine, get_db
 from typing import Optional
-=======
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
+#=======
+#>>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
 
 router = APIRouter(
     prefix="/orders",
@@ -85,4 +85,5 @@ def get_orders_by_date_range(
 @router.get("/revenue/{target_date}", response_model=schema.DailyRevenueResponse)
 def get_daily_revenue(target_date: date, db: Session = Depends(get_db)):
     return controller.daily_revenue(db, target_date)
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
+#>>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
+
