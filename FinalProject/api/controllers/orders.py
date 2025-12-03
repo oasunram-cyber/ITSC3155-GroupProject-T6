@@ -1,16 +1,14 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status, Response
 from sqlalchemy.exc import SQLAlchemyError
-<<<<<<< HEAD
 from ..schemas import orders as schema 
 from sqlalchemy import func
 from datetime import datetime
-=======
+
 
 from ..models import orders as model
 from ..schemas import orders as schema
 
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
 
 def create(db: Session, request: schema.OrderCreate):
     """
@@ -39,7 +37,7 @@ def create(db: Session, request: schema.OrderCreate):
 
     return new_item
 
-<<<<<<< HEAD
+
 def read_all(db: Session, start_date: str = None, end_date: str = None):
     query = db.query(model.Order)
     
@@ -48,7 +46,6 @@ def read_all(db: Session, start_date: str = None, end_date: str = None):
                      .filter(model.Order.order_date <= end_date)
     
     return query.all()
-=======
 
 def read_all(db: Session):
     try:
@@ -60,7 +57,6 @@ def read_all(db: Session):
             detail=error,
         )
     return result
->>>>>>> cf68c60 (feat: implement orders, order details, payments + fix models and db relationships)
 
 
 def read_one(db: Session, item_id: int):
@@ -133,5 +129,6 @@ def get_revenue(db: Session):
     # Sums up the 'total_price' column from all orders
     result = db.query(func.sum(model.Order.total_price)).scalar()
     return {"total_revenue": result or 0.0}
+
 
 
